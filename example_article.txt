@@ -1,0 +1,40 @@
+This is the first post in a series where I will be documenting my progress on developing a “fake news” classifier. This project was completed as the capstone for myself (@BrennanBorlaug), Sashi Gandavarapu (@Sashihere), Talieh Hajzargarbashi, and Umber Singh (@Umby) in UC Berkeley’s Master of Information and Data Science (MIDS) program. In this series, I hope to cover many of the challenges faced and decisions made in developing and deploying a text classifier from start to finish. This post in particular will detail the problem itself and cover the data collection efforts that were necessary to acquire a labeled training corpus. You can try the classifier yourself at http://www.classify.news.
+
+First, some background
+For Americans, 2016 was a year dominated by highly charged political and social discourse. It saw the acceptance of social media as a news source and a growing distrust for politicians and the mainstream media. In fact, Oxford Dictionaries even selected “post-truth” as 2016’s international word of the year. The widespread propagation of false information online is not a recent phenomenon but its perceived impact in the 2016 U.S. presidential election has thrust the issue into the spotlight. Technology companies are already exploring machine learning-based approaches for solving the problem. Facebook is expected to roll out features and tips for flagging “fake news” worldwide in the near future.
+
+
+Interested in NLP, we saw this as the perfect opportunity to apply machine learning to a real world problem. We were familiar with the success of statistical learning-based approaches for SPAM filtering, and wanted to find out if similar approaches could be used for “fake news” detection. First, we needed to develop a working definition of “fake news”. This was something we wrestled with for a very long time, and in the end, the best we could do was define the most common forms of shared articles that we observed others mistake for truthful reporting:
+
+The four observed flavors of “fake news”:
+
+1) Clickbait?—?Shocking headlines meant to generate clicks to increase ad revenue. Oftentimes these stories are highly exaggerated or totally false.
+
+2) Propaganda?—?Intentionally misleading or deceptive articles meant to promote the author’s agenda. Oftentimes the rhetoric is hateful and incendiary.
+
+3) Commentary/Opinion?—?Biased reactions to current events. These articles oftentimes tell the reader how to perceive recent events.
+
+4) Humor/Satire?—?Articles written for entertainment. These stories are not meant to be taken seriously.
+
+We knew there would be no silver bullet solution to this problem. The most effective solution is a multi-dimensional approach that incorporates ensembles of highly performing models dedicated to detecting specific types of “fake news” paired with human fact checkers and the wisdom of crowds.
+
+Critical Assumptions
+To get started, we needed a sufficiently large labeled corpus of articles to train on. As of February 2017, this was non-existent so we decided to roll up our sleeves and create one ourselves. Around this time, we found the OpenSources project which describes itself as “a curated resource for assessing online information sources, available for public use”. This transfer of responsibility was appealing to us as we did not fancy ourselves the “arbiters of truth”. We decided to only consider sources that were given a label by the OpenSources project and built our corpus under the following assumptions:
+
+1) Sites listed as credible/non-credible in OpenSources database were ground truth.
+
+2) Each article from the sites chosen, shared the label of its parent site.
+
+Selecting Sources
+After deciding to treat the OpenSources labels as ground truth, we were still left with 700+ vastly different non-credible sources to choose from. We needed to filter our non-credible source list further, so we developed a few additional criteria to homogenize the types of articles to train on (homogeneity was desired to prevent topical and temporal biases in our data set):
+
+1) The source must publish original content and not simply be an aggregator of articles from other sources.
+
+2) Articles published by the source should focus, primarily, on the topics of U.S. news and politics.
+
+3) The source should report on current events, publishing multiple articles daily.
+
+Following this criteria, we limited our training set to articles published by just five credible sources and nine non-credible sources.
+
+Building a Corpus
+We wrote and scheduled web scraping scripts in Python (using the newspaper article scraping library and the schedule library for job scheduling) to pull article content from our source list every night. Only articles which had been published in the previous 24 hours were collected. We began collecting articles in mid-February and continued through the end of April. At the time of publishing, we had collected 5,345 unique articles (1,264 credible, 4,081 non-credible) for our corpus.
