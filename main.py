@@ -141,7 +141,7 @@ print(accuracy, f1)
 ### Test classifier on real life articles
 # Loop through .txt files and determine fake news or not
 def classify_real_articles():
-    path = r'C:\Users\A747043\Desktop\My documents\Python\Python36\PyCharm Projects\Projects\fake_news\detect-fake-news\\'
+    path = r'C:\Users\A747043\Desktop\My documents\Python\Python36\PyCharm Projects\Projects\fake_news\detect-fake-news\real_articles\\'
     directory = os.fsencode(path)
 
     for file in os.listdir(directory):
