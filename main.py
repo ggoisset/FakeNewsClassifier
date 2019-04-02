@@ -15,7 +15,10 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from nltk.tokenize import word_tokenize, WhitespaceTokenizer, TweetTokenizer
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import nltk
+import os
+from time import strftime
 
+beginning_time = strftime("%Y-%m-%d %H:%M:%S")
 nltk.download('vader_lexicon')
 
 # Project based on Aaron Edell Fake News classifier
@@ -40,8 +43,8 @@ df1 = df1[['text', 'label']]
 df1 = df1[df1.text.isna() == False]
 length_df1 = len(df1)
 
-# Build sublist of original df1, contains 3000 lines picked at random
-random_indexes = list(np.random.choice(length_df1 - 2, 3000, replace=False))
+# Build sublist of original df1, contains # lines picked at random, out of 20671 possible
+random_indexes = list(np.random.choice(length_df1 - 2, 15000, replace=False))
 df1 = df1.iloc[random_indexes]
 
 
@@ -131,28 +134,38 @@ f1 = f1_score(ytest, lr2_preds)
 
 print(accuracy, f1)
 
+
 # 1st excluding 's': Accuracy 0.9213 ; f1 0.922
 # 2nd additionally exclude 'm' : Accuracy 0.922666 f1 0.923, gain of 0.1%
 
-### Test classifier on real life article
-# TODO: def import_real_articles():
+### Test classifier on real life articles
+# Loop through .txt files and determine fake news or not
+def classify_real_articles():
+    path = r'C:\Users\A747043\Desktop\My documents\Python\Python36\PyCharm Projects\Projects\fake_news\detect-fake-news\\'
+    directory = os.fsencode(path)
 
-article_import = open(
-    r'C:\Users\A747043\Desktop\My documents\Python\Python36\PyCharm '
-    r'Projects\Projects\fake_news\detect-fake-news\example_article1.txt',
-    'r')
+    for file in os.listdir(directory):
+        filename = os.fsdecode(file)
+        if filename.endswith(".txt"):
 
-real_article = article_import.read()
+            article_import = open(path + filename, 'r')
 
-# Transformations to fit classifier format
-real_article = [real_article]
-real_article = bow.transform(real_article)
-real_article = pd.DataFrame(real_article.toarray())
-real_article.columns = bow.get_feature_names()
+            real_article = article_import.read()
 
-real_article_pred = lr2.predict(real_article)
-if real_article_pred[0] == 0:
-    print("Probably real")
-else:
-    print("Probably fake")
+            # Transformations to fit classifier format
+            real_article = [real_article]
+            real_article = bow.transform(real_article)
+            real_article = pd.DataFrame(real_article.toarray())
+            real_article.columns = bow.get_feature_names()
 
+            real_article_pred = lr2.predict(real_article)
+            if real_article_pred[0] == 0:
+                print(filename + " is probably real")
+            else:
+                print(filename + " is probably fake")
+
+
+print('\n')
+classify_real_articles()
+
+end_time = strftime("%Y-%m-%d %H:%M:%S")

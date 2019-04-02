@@ -1,0 +1,58 @@
+There’s No Hiring Bias Against Women In Tech, They Just Suck At Interviews
+9,537
+23532
+MILO1 Jul 20163,378
+The tech industry is plagued by guilt about the lack of women in its technical teams — and everywhere else. But new data suggests that there’s no hiring bias against them. Women might just suck at job interviews, according to a new report by an interview matchmaking service.
+Interviewing.io, a service which allows interviewers and interviewees to match up online and conduct interviews based on their communication skills recently set out to fix the “gender gap in tech” by creating a voice changer that would allow interviewees to mask their voice, and in turn their gender, in an attempt to tackle bigoted interviewers.
+
+
+
+
+
+What the study revealed – to the shock of the feminists who organized it – was that women underperform in job interviews even when the interviewer believes them to be male.
+
+“In this post, I’ll talk about what happened when we built real-time voice masking to investigate the magnitude of bias against women in technical interviews,” wrote the researchers in their report.
+
+“In short, we made men sound like women and women sound like men and looked at how that affected their interview performance. We also looked at what happened when women did poorly in interviews, how drastically that differed from men’s behavior, and why that difference matters for the thorny issue of the gender gap in tech.”
+
+The report states that men are “advancing to the next round” around 1.4 times more often than women, and that men were being rated an average of 3 stars out of 4, compared to the 2.5 stars that women received.
+
+Interviewing.io’s Aline Lerner, who authored the report, originally hypothesized that differences in real-world interview results was down to employer discrimination against women, but the results quickly forced her to rethink her view.
+
+“Armed with the ability to hide gender during technical interviews, we were eager to see what the hell was going on and get some insight into why women were consistently under-performing” continued the report.
+
+“The setup for our experiment was simple. Every Tuesday evening at 7 PM Pacific, interviewing.io hosts what we call practice rounds. In these practice rounds, anyone with an account can show up, get matched with an interviewer, and go to town. And during a few of these rounds, we decided to see what would happen to interviewees’ performance when we started messing with their perceived genders.”
+
+This is where things got interesting.
+
+“After running the experiment, we ended up with some rather surprising results. Contrary to what we expected (and probably contrary to what you expected as well!), masking gender had no effect on interview performance with respect to any of the scoring criteria (would advance to next round, technical ability, problem solving ability).”
+
+“If anything, we started to notice some trends in the opposite direction of what we expected: for technical ability, it appeared that men who were modulated to sound like women did a bit better than unmodulated men and that women who were modulated to sound like men did a bit worse than unmodulated women.”
+
+That’s right. Their test, designed to provide empirical ballast to a feminist agenda, ended up completely torpedoing it. Worse, it suggested that employers actually discriminate in favor of women, choosing them in favor of men when they believe them to be competent enough.
+
+“After the experiment was over, I was left scratching my head” concluded the report. “If the issue wasn’t interviewer bias, what could it be?”
+
+The report also reveals that women are around seven times more likely to quit the platform after underperforming in an interview. According to a published graph featured in the report, men are more likely to continue, giving it more of a shot on the second interview as opposed to completely giving up like their female counterparts.
+
+With their theories in tatters, the report’s authors had no choice but to admit defeat.
+
+“Once you factor out interview data from both men and women who quit after one or two bad interviews, the disparity goes away entirely. So while the attrition numbers aren’t great, I’m massively encouraged by the fact that at least in these findings, it’s not about systemic bias against women or women being bad at computers or whatever. Rather, it’s about women being bad at dusting themselves off after failing, which, despite everything, is probably a lot easier to fix.”
+
+As mentioned by the small-printed footnotes on the report, only 15 per cent of the service’s users are actually female. Is this a “gender gap” in technology, or are women simply not trying?
+
+Perhaps the minimal number of female users is down to the fact that women don’t actually need to ace interviews any more. With modern minority quotas, women can usually land a job for no other reason than employer box-ticking. Meanwhile, men, as the report suggests, are forced to attend numerous interviews before getting a job.
+
+Of course, as noted in the report, when interviewers think men are women they snap them right up.
+
+Online commenters on the report were quick to spot the irony.
+
+“So let me see: you set up an elaborate project that was supposed to prevent the alleged discrimination and the whole thing blew up in your face, proving that there isn’t any gender discrimination in the first place! Ha ha …” said one commenter. “Astonishing that the assumptions of your leftist ideology did not match with the reality. Maybe the computers themselves somehow became gender-biased, hm? You have to investigate that next.”
+
+“So this experiment shows there is a ‘women bonus’ in tech. Men should demand equal treatment under the law. Sexism has no place in the industry,” said another.
+
+Some readers of the report attempted to justify the results by claiming that gender wasn’t the only variable. “I think it has more to do with culture,” claimed one reader, whilst another announced “I’m wondering if some of the initial attrition rates between the sexes may be caused not by gender but by societal norms of gender in a particular region?”
+
+Well, it’s an interesting theory. Perhaps that reader should set up an experiment to test it.
+
+There’s only one flaw in the study, in my view. Despite claiming to make women sound like men, and men sound like women, to my ears the voice-changing technology made female interviewees sound more like trannies, with the signature croaky-sounding pitch change. Still, if this experiment proves anything, it’s what we all knew already — that being part of an allegedly oppressed group is actually an advantage.
