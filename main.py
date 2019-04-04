@@ -17,6 +17,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import nltk
 import os
 from time import strftime
+import pickle
 
 beginning_time = strftime("%Y-%m-%d %H:%M:%S")
 nltk.download('vader_lexicon')
@@ -44,7 +45,7 @@ df1 = df1[df1.text.isna() == False]
 length_df1 = len(df1)
 
 # Build sublist of original df1, contains # lines picked at random, out of 20671 possible
-random_indexes = list(np.random.choice(length_df1 - 2, 15000, replace=False))
+random_indexes = list(np.random.choice(length_df1 - 2, 3000, replace=False))
 df1 = df1.iloc[random_indexes]
 
 
@@ -164,6 +165,8 @@ def classify_real_articles():
             else:
                 print(filename + " is probably fake")
 
+
+pickle.dump(lr2, open("model.pkl", "wb"))
 
 print('\n')
 classify_real_articles()
