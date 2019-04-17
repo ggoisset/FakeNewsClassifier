@@ -1,7 +1,10 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 import pickle
 import pandas as pd
 import re
+from multiprocessing import Process
+
+to_reload = False
 
 
 # Used by bow pickle file
@@ -15,12 +18,21 @@ def clean_article(article):
 app = Flask(__name__)
 
 
+def reload():
+    global to_reload
+    to_reload = True
+    return "reloaded"
+
+
+reload()
+
+
 @app.route("/")
 def home():
     return render_template('input_text.html')
 
 
-@app.route('/result', methods=['POST', 'GET'])
+@app.route("/result", methods=['POST', 'GET'])
 def result():
     if request.method == 'POST':
         result = request.form['article_box']
